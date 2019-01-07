@@ -1,0 +1,57 @@
+<!-- The Main Page For Home -->
+
+<!-- NOTES
+- q&= signifies the next word will be an argument
+- EXAMPLE /sources/q&=render.js | render.js is the argument, in our case for the file to be loaded
+-->
+<html>
+
+  <head>
+    <!-- Main 3JS Script -->
+    <script src="https://threejs.org/build/three.js"></script>
+
+    <!-- For Loading Objects -->
+    <script src="https://threejs.org/examples/js/loaders/FBXLoader.js"></script>
+    <script src="https://threejs.org/examples/js/controls/PointerLockControls.js"></script>
+    <script src="source/q&=Inflate.min.js"></script>
+    <!-- Our Script -->
+    <script src="source/q&=render.js"></script>
+    <script src="source/q&=controls.js"></script>
+    <script src="source/q&=models.js"></script>
+    <script src="source/q&=introscene/q&=introscene.js"></script>
+    <script src="source/q&=main.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function(){
+        document.getElementById("start").addEventListener("click", function(){
+          window.controls.lock();
+          document.getElementById("start").style.display = "none";
+          window.renderer.domElement.style.display = "block";
+
+          
+        });
+      });
+
+    </script>
+  </head>
+
+  <body>
+    <button id="start"> P L A Y ? </button>
+
+  </body>
+
+  <style>
+
+    body{
+      margin : 0;
+    }
+
+    canvas{
+      width : 100%;
+      height : 100%;
+      display: none;
+    }
+
+  </style>
+
+</html>
